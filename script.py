@@ -1,4 +1,3 @@
-from tkinter.tix import FileEntry
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -9,12 +8,12 @@ driver = webdriver.Chrome(PATH)
 driver.get("https://lichess.org/analysis")
 
 
-def calc(FEN):
+def calc(fen):
     fen_box = driver.find_element_by_xpath("/html/body/div[1]/main/div[4]/div/div[1]/input")
     for i in range(57):
         fen_box.send_keys(Keys.BACK_SPACE)
 
-    fen_box.send_keys(FEN)
+    fen_box.send_keys(fen)
     fen_box.send_keys(Keys.RETURN)
 
 
